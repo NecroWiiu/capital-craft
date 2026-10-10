@@ -32,7 +32,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.block.MapColor;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.block.BlockRenderType;
-import net.minecraft.block.BlockEntity;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.nbt.NbtCompound;
