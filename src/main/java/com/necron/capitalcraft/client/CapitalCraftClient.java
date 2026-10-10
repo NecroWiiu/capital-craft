@@ -32,5 +32,11 @@ public class CapitalCraftClient implements ClientModInitializer {
    if(world.getBlockState(hit.getBlockPos()).isOf(CapitalCraft.GPU_RIG)){if(world.isClient)MinecraftClient.getInstance().setScreen(new CapitalScreen("crypto"));return ActionResult.SUCCESS;}return ActionResult.PASS;
   });
  }
- public static void send(String action,int amount){ if(MinecraftClient.getInstance().getNetworkHandler()!=null) ClientPlayNetworking.send(CapitalCraft.ACTION,PacketByteBufs.create().writeString(action).writeInt(amount)); }
+public static void send(String action, int amount) {
+    if (MinecraftClient.getInstance().getNetworkHandler() != null) {
+        PacketByteBuf buf = PacketByteBufs.create();
+        buf.writeString(action);
+        buf.writeInt(amount);
+        ClientPlayNetworking.send(CapitalCraft.ACTION, buf);
+    }
 }
